@@ -1,0 +1,581 @@
+@import url(../fonts/MyriadPro-Semibold.otf)
+  
+
+$primary-color-yellow: #fef89a
+
+$primary-color-green: #74c82a   
+
+@mixin center-items 
+  align-items: center
+  justify-items: center
+
+@mixin center-self
+  align-self: center
+  justify-self: center
+
+@mixin head-icon-template
+  display: block
+  width: 51px
+  height: 51px
+  border-radius: 50%
+  background: url(../img/header-icons.png) no-repeat center
+
+
+
+
+html
+  height: 100%
+
+body
+  margin: 0
+  padding: 0
+  height: 100%
+  font: 14px/16px 'Myriad Pro', sans-serif
+  color: #000
+  background: #fff
+
+a
+  color: #000
+  text-decoration: none
+
+  &:hover
+    text-decoration: none
+
+ol, ul 
+  list-style: none;
+
+.clearfix:before,
+.clearfix:after 
+  content: " "
+  display: table
+
+.clearfix:after 
+  clear: both
+
+*
+  padding: 0
+  margin: 0
+  outline: none
+  box-sizing: border-box
+
+
+.center 
+  margin: 0 auto 
+  width: 70%  
+
+
+.wrapper
+  .header
+    background: $primary-color-green
+
+    .header__content
+      display: grid
+      grid-template-columns: 10% 80%
+      grid-column-gap: 10%
+      padding: 0.5% 0
+
+      .header__logo
+        margin-left: 15px
+        align-self: center
+        
+
+        img
+          display: block
+
+      .header__links
+        display: grid
+        grid-template-columns: 1fr 1fr 1.1fr 1.1fr
+        grid-column-gap: 1%
+        justify-items: end
+        
+        .header__links-item
+          display: grid
+          grid-template-columns: 30% 70%
+          align-items: center
+          justify-items: start
+          font-weight: bold
+          
+
+
+          .circle-courses
+            @include head-icon-template
+            background-position: 0 0
+
+          .circle-years
+            @include head-icon-template
+            background-position: -52px 0
+
+          .circle-ring
+            @include head-icon-template
+            background-position: -103px 0
+
+          .circle-mouse
+            @include head-icon-template
+            background-position: -153px 0
+            cursor: pointer
+
+          .info
+            font-size: 0.9em
+            margin-left: 20px
+
+          .text-small
+            font-size: 0.7em
+
+          a
+            text-decoration: underline
+            color: #000
+            font-size: 0.9em
+            margin-left: 10px
+
+  .promo
+    background: $primary-color-yellow
+
+    .promo__content
+      background: url(../img/promo-girl.png) no-repeat left
+      background-size: contain
+      // height: 350px
+      display: grid
+      grid-template-columns: 50% 50%
+
+    .promo__content-info
+      justify-self: center
+
+      .promo__content-info-title
+        margin-top: 2.1em
+        margin-right: 1.5em
+        font-size: 1.6em
+        line-height: 1.3em
+        font-weight: bold
+
+      .promo__content-info-text
+        display: grid
+        grid-template-columns: 1fr 0.1fr 1fr
+        @include center-items
+        margin-top: 1.7em
+
+        .langs
+
+          li
+            line-height: 1.4em
+            font-size: 1.2em
+
+            span
+              vertical-align: middle
+
+
+            .langs-marker
+              display: inline-block
+              height: 20px
+              width: 20px
+              background: url(../img/check-mark.png) no-repeat center
+
+        .plus
+          font-size: 2.7em
+          font-weight: bold
+          color: #eb1c22    
+
+        .surprise
+          font-weight: bold
+
+          .text-red
+            display: inline-block
+            font-size: 1.7em
+            color: #eb1c22 
+            text-transform: uppercase
+            padding-top: 7px
+
+          .text-bold
+            display: block
+            font-size: 1.2em
+            line-height: 1.6em
+
+      .minutes-in-day
+        margin-top: 1.7em
+        font-size: 1.3em
+        line-height: 1.5em
+        text-align: center
+
+  .form
+    background: $primary-color-green
+
+    .form__content
+      display: grid
+      grid-template-columns: minmax(100px, 1fr) repeat(auto-fit, 380px)
+      grid-column-gap: 3%
+
+      .form__content-text
+        padding: 0 1.5em
+        
+
+        .form__content-text-title
+          margin: 2.1em 0 
+          font-size: 1.6em
+          line-height: 1.6em
+          text-align: center
+          font-weight: 600
+
+        .form__content-text-description
+          display: grid
+          grid-template-columns: 35% 65%
+          grid-column-gap: 5%
+          margin-bottom: 2.1em
+
+          img
+            width: 100%
+
+          .about
+            font-size: 1.1em
+            line-height: 1.6em
+
+            a
+              text-decoration: underline
+              color: #0f04e4
+
+      .form__content-form
+        background: #ff0000
+
+        form
+          padding: 2.85em 1.7em 1.7em 1.7em
+        
+        fieldset
+          border: 0
+
+          input
+            width: 100%
+            height: 30px
+            padding-left: 0.7em
+            border: none
+            color: #000
+            font: 14px/14px Arial, sans-serif;
+
+          input[type="text"]
+            margin: 5% 0
+            
+
+            &::placeholder
+              color: #000
+
+          .wrap-radio
+            display: grid
+            grid-template-columns: 5% 92%
+            grid-column-gap: 3%
+            margin-top: 3%
+            align-items: start
+            font: 11px/17px Tahoma, sans-serif
+
+            input[type="radio"]
+              height: 25px
+
+            a
+              text-decoration: underline
+
+          button
+            width: 100%
+            margin-top: 7%
+            padding: .5em 0 .5em 1.5em
+            background: #ffff00 url(../img/icon-button-form2.png) no-repeat right
+            background-position-x: 90%
+            font-size: 2.1em
+            font-weight: bold
+            border-radius: 11px
+            border: none
+            cursor: pointer
+            line-height: 2em
+            text-align: left
+
+  .price
+    background: $primary-color-yellow
+    
+    .price__table-container
+      padding: 3.7em 0
+
+      .price__table
+        width: 100%
+        height: 100%
+        background: #fff
+        border-collapse: collapse
+
+        tbody
+          border: 1px solid #000
+          
+          tr
+            .text-center
+                text-align: center
+                padding: 7px 0
+
+            .course-title
+              line-height: 1.5em
+              padding-left: 7px
+
+            td
+              padding: 3px;
+              border: 1px solid #000
+
+            
+
+              .inner-table
+                border: 0
+                border-collapse: collapse
+
+
+                .tbody-inner-table
+                  border: 0
+                  font-size: 80%
+
+                  .col-inner-table 
+                    border: 0
+                    padding: 4px
+                    width: 20%
+
+                  .title-inner-table
+                    width: 35%
+
+                  .text-red
+                    color: #fe0101
+                    margin-left: 7px
+                    margin-right: 14px;
+
+
+                  .economy
+                    display: inline-block
+                    margin-left: 14px
+                    padding: 0
+                    padding-top: 7px;
+
+                  &:first-child(1)
+                    margin-left: 0
+
+                  .wrap-btn
+                    text-align: right
+
+                    .btn-order
+                      border: none
+                      background: #fe0101
+                      margin-left: 30px
+                      padding: 3px 11px
+                      color: #fff
+                      border-radius: 6px
+                      font-family: Verdana
+                      font-weight: bold
+                      cursor: pointer
+
+
+  .review
+    background: $primary-color-green
+
+    .review__cont
+      .review__cont-title
+        font-size: 1.8em
+        line-height: 1.5em
+        text-align: center
+        padding-top: 2em
+
+
+      .review__cont-items
+        display: grid
+        grid-template-columns: 43% 43%
+        grid-column-gap: 14%
+        margin-top: 11%
+        
+
+        .review-item
+          padding: 5em 2em 2em 2em
+          background: #fff
+          border-radius: 7px
+          margin-bottom: 3em
+          
+
+          .wrap-review-photo
+            text-align: center
+            margin-top: -130px
+
+            .review-photo-man,.review-photo-woman
+              display: inline-block
+              height: 100px
+              width: 100px
+              border-radius: 50%
+              text-align: center
+
+            .review-photo-man
+              background: url(../img/man-review.png) no-repeat center
+
+            .review-photo-woman
+              background: url(../img/woman-review.png) no-repeat center
+
+          .review-text
+            font-family: Segoe UI
+            line-height: 1.5em
+            margin-top: 3%
+
+            a
+              text-decoration: underline
+              color: #0f04e4
+
+                    
+
+            
+
+
+
+
+@media screen and (max-width: 1200px)
+
+  .center
+    width: 80%
+  .wrapper
+
+    .form
+      .form__content
+        grid-template-columns: minmax(100px, 1fr) repeat(auto-fit, 320px)
+ 
+        .form__content-form
+          form
+            button
+              padding: .5em 0 .5em .7em
+              background: #ffff00 url(../img/icon-button-form2.png) no-repeat right
+              background-position-x: 95%
+
+
+
+@media screen and (max-width: 990px)
+  
+  .center
+    width: 80%
+
+  .wrapper
+    .header
+      .header__content
+        .header__links
+          grid-template-columns: repeat(3,1fr)
+         
+          li:nth-child(2)
+            display: none
+          
+
+
+    .promo
+      font-size: 90%
+      background: #fef89a
+      
+      
+
+      .promo__content
+        background: #fef89a url(../img/promo-girl-opacity.png) no-repeat center top
+        grid-template-columns: 100%
+        background-size: cover
+        padding-bottom: 2em
+
+        .promo__content-info
+          float: none
+          text-align: center
+
+          
+
+    .form
+      .form__content
+        font-size: 85% 
+        grid-template-columns: minmax(100px, 1fr) repeat(auto-fit, 300px)
+ 
+        .form__content-form
+          form
+            button
+              padding: .5em 0 .5em .7em
+              background: #ffff00 url(../img/icon-button-form2.png) no-repeat right
+              background-position-x: 95%
+
+
+@media screen and (max-width: 768px)
+
+  .wrapper
+    .header
+      .header__content
+        .header__links
+          grid-template-columns: 1fr
+         
+          li:nth-child(1)
+            display: none
+
+          li:nth-child(3)
+            display: none
+
+
+    .form
+      .form__content
+        grid-column-rows: 1fr 1fr
+        grid-template-columns: 100%
+
+        .form__content-text
+          .form__content-text-description
+            grid-template-columns: 20% 75%
+            grid-column-gap: 5%
+            margin-bottom: 2.1em
+ 
+        .form__content-form
+          width: 90%
+          justify-self: center
+          form
+            input[type="text"]
+             margin: 3% 0
+
+            button
+              padding: .5em 0 .5em 1.5em
+              background: #ffff00 url(../img/icon-button-form2.png) no-repeat right
+              background-position-x: 95%
+              text-align: left
+
+    .price
+      
+      .price__table-container
+        max-width: 90%
+        .price__table
+          font-size: 80%
+
+          tbody
+            tr
+              td
+                .inner-table
+                  .tbody-inner-table
+                    .text-red
+                      font-size: 1.3em
+                    .economy
+                      display: none
+                      
+          .hidden-small-screen
+            display: none
+
+          
+    .review
+      .review__cont
+        .review__cont-items
+          grid-template-columns: 100%
+          grid-template-rows: 1fr 1fr
+          grid-row-gap: 50px
+          margin-top: 20%
+
+
+@media screen and (max-width: 530px)
+
+  .wrapper
+
+    .form
+      .form__content
+        .form__content-form
+          width: 95%
+          justify-self: center
+          form
+            input[type="text"]
+             margin: 3% 0
+
+            button
+              font-size: 1.5em
+              padding: .5em 0 .5em 1.5em
+              background: #ffff00 url(../img/icon-button-form2.png) no-repeat right
+              background-position-x: 95%
+              text-align: left
+
+
+    .price
+      display: none
+      
+                      
+          
